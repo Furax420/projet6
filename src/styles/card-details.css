@@ -1,0 +1,76 @@
+/* card-details.css */
+.details-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-left: 6.94%;
+  margin-right: 6.94%;
+  color: #ff6060;
+}
+
+.title-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title-and-location > h2 {
+  font-size: 36px;
+  font-weight: 500;
+  margin-bottom: 0;
+}
+
+.host-image {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.host-name {
+  width: 50px;
+  font-size: 18px;
+  margin-right: 10px;
+}
+
+.host-info {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.tags-rating {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.location {
+  margin-top: 0;
+  font-size: 18px;
+  font-weight: 500;
+  top: 54.5%;
+  padding-bottom: 0px;
+}
+
+.tag {
+  background-color: #ff6060;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 10px;
+  margin-right: 10px;
+}
+
+.rating {
+  display: flex;
+}
+
+.star {
+  color: #ff6060;
+  font-size: 24px;
+}
+
+.empty {
+  content: "";
+  height: 100px;
+}

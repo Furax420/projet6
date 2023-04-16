@@ -1,0 +1,53 @@
+/* carousel.css */
+.carousel {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  width: 86.12%;
+  margin-left: 6.94%;
+  margin-right: 6.94%;
+  height: 415px;
+  border-radius: 25px;
+}
+
+.carousel-btn {
+  background-color: transparent;
+  border: none;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.carousel-images {
+  display: flex;
+  transition: transform 0.4s ease-in-out;
+}
+
+.carousel-image {
+  width: 100%;
+  object-fit: contain;
+}
+
+.carousel-indicator {
+  position: absolute;
+  bottom: 20px;
+  font-size: 1rem;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  z-index: 10;
+}
+
+.prev-btn {
+  position: absolute;
+  left: 10px;
+}
+
+.next-btn {
+  position: absolute;
+  right: 10px;
+}

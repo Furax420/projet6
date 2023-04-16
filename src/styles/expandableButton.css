@@ -1,0 +1,63 @@
+/* expandableButton.css */
+.expandable-button-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background-color: #ff6060;
+  border: none;
+  padding: 10px 20px 10px 20px;
+  font-size: 18px;
+  cursor: pointer;
+  width: 520px;
+  border-radius: 10px;
+  color: white;
+  padding-left: 10px;
+}
+
+.expandable-button-content {
+  background-color: #f7f7f7;
+  border-top: 1px solid #d9d9d9;
+  width: 520px;
+  height: 249px;
+  border-radius: 10px;
+  font-size: 18px;
+  line-height: 26px;
+  border: none;
+}
+.expandable-button-content > p {
+  padding: 20px;
+  margin: 0;
+}
+
+.description-equipement {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+}
+
+.fa-solid {
+  color: white;
+}
+
+.equipment-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.equipment-list li {
+  margin: 10px 5px;
+  padding-left: 15px;
+}
+
+/* expandableButton.css */
+.expandable-button-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease-in-out;
+}
+
+.open {
+  max-height: 400px;
+}
