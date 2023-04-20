@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import "../styles/expandableButton.css";
 
-const ExpandableButton = ({ buttonText, content }) => {
+const ExpandableButton = ({ buttonText, content, aboutPage }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleContent = () => {
@@ -10,7 +10,7 @@ const ExpandableButton = ({ buttonText, content }) => {
   };
 
   return (
-    <div className="expandable-button">
+    <div className={`expandable-button ${aboutPage ? "about" : ""}`}>
       <button onClick={toggleContent} className="expandable-button-toggle">
         {buttonText}{" "}
         <i className={`fa-solid fa-chevron-${isOpen ? "up" : "down"}`}></i>

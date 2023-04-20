@@ -1,19 +1,20 @@
 // CardDetails.js
 import React from "react";
 import { useParams } from "react-router-dom";
-import data from "./data.json";
-import Banner from "./banner";
-import Carousel from "./Carousel";
-import ExpandableButton from "./ExpandableButton";
+import data from "../components/data.json";
+import Banner from "../components/banner";
+import Carousel from "../components/Carousel";
+import ExpandableButton from "../components/ExpandableButton";
 import "../styles/card-details.css";
-import Footer from "./Footer";
+import { NavLink } from "react-router-dom";
+import NotFound from "../pages/NotFound";
 
 const CardDetails = () => {
   const { id } = useParams();
   const card = data.find((item) => item.id === id);
 
   if (!card) {
-    return <div>Card not found</div>;
+    return <NotFound />;
   }
 
   return (
@@ -80,17 +81,17 @@ const CardDetails = () => {
             className="equipement"
             buttonText="Équipements"
             content={
-              <ul className="equipment-list">
-                {card.equipments.map((equipment, index) => (
-                  <li key={index}>{equipment}</li>
-                ))}
-              </ul>
+              <p>
+                <ul className="equipment-list">
+                  {card.equipments.map((equipment, index) => (
+                    <li key={index}>{equipment}</li>
+                  ))}
+                </ul>
+              </p>
             }
           />
         </div>
-        <div className="empty"></div>
       </div>
-      <Footer />
     </div>
   );
 };

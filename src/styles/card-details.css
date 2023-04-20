@@ -28,15 +28,17 @@
 }
 
 .host-name {
-  width: 50px;
+  width: 75px;
   font-size: 18px;
-  margin-right: 10px;
+  text-align: right;
+  /* Permet d'aligner le texte sur la droite */
+  direction: rtl;
 }
 
 .host-info {
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 10px;
 }
 
 .tags-rating {
@@ -70,7 +72,7 @@
   font-size: 24px;
 }
 
-.empty {
+/* .empty {
   content: "";
-  height: 100px;
-}
+  height: 25px;
+} */

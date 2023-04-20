@@ -1,14 +1,12 @@
 import React from "react";
+import "../styles/banner.css";
 import { NavLink } from "react-router-dom";
 
 const Banner = () => {
   return (
-    <div className="banner">
+    <header className="banner">
       <div className="logo">
-        <img src="/K.png" alt="K" className="image" />
-        <img src="/House.png" alt="House" className="image" />
-        <img src="/S.png" alt="S" className="image" />
-        <img src="/A.png" alt="A" className="image" />
+        <img src="/Kasa.logo.png" alt="Kasalogo" className="image" />
       </div>
       <div className="navigation">
         <NavLink
@@ -23,7 +21,7 @@ const Banner = () => {
           À Propos
         </NavLink>
       </div>
-    </div>
+    </header>
   );
 };
 

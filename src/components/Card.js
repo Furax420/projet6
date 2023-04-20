@@ -7,7 +7,9 @@ const Card = ({ id, title, cover }) => (
   <div className="card">
     <NavLink to={`/card/${id}`}>
       <div className="card-content">
-        <img src={cover} alt={title} className="card-image" />
+        <div className="card-image-wrapper">
+          <img src={cover} alt={title} className="card-image" />
+        </div>
         <h3 className="card-title">{title}</h3>
       </div>
     </NavLink>

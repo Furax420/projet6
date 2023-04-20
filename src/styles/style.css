@@ -1,69 +1,32 @@
-.banner {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 40px 6.94%;
-}
-
 body {
   font-family: "Montserrat", sans-serif;
   max-width: 1240px;
   margin: auto;
+  overflow-y: scroll;
 }
 
-.image {
-  margin-right: 6px;
+/* Personnalisation de la barre de défilement */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #cccccc;
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: #b8b8b8;
 }
 
-.navigation {
+.app-container {
   display: flex;
-  gap: 57px;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-.nav-link {
-  text-decoration: none;
-  color: #ff6060;
-}
-
-.nav-link.active {
-  text-decoration: underline;
-  color: #ff6060;
-}
-
-.front-image {
-  display: flex;
-  justify-content: center;
-  width: 86.12%;
-  border-radius: 25px;
-  height: 223px;
-  object-fit: cover;
-  margin: auto;
-}
-.image-container {
-  position: relative;
-}
-.image-container::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 6.94%;
-  border-radius: 25px;
-  border: none;
-  width: 86.12%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.3);
-  z-index: 1;
-}
-
-.text-image {
-  position: absolute;
-  text-align: center;
-  color: white;
-  font-weight: 500;
-  font-size: 48px;
-  top: 25%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 2;
-  width: 86.12%;
+.main-content {
+  flex-grow: 1;
 }

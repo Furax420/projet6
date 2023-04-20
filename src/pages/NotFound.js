@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import Banner from "./banner";
+import Banner from "../components/banner";
 
 const NotFound = () => {
   return (

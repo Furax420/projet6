@@ -17,7 +17,6 @@
 
 .expandable-button-content {
   background-color: #f7f7f7;
-  border-top: 1px solid #d9d9d9;
   width: 520px;
   height: 249px;
   border-radius: 10px;
@@ -33,7 +32,7 @@
 .description-equipement {
   display: flex;
   justify-content: space-between;
-  margin-top: 50px;
+  margin-top: 30px;
 }
 
 .fa-solid {
@@ -46,16 +45,11 @@
   padding: 0;
 }
 
-.equipment-list li {
-  margin: 10px 5px;
-  padding-left: 15px;
-}
-
 /* expandableButton.css */
 .expandable-button-content {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.4s ease-in-out;
+  transition: max-height 0.2s ease-in-out;
 }
 
 .open {

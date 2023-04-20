@@ -1,4 +1,3 @@
-// Carousel.js
 import React, { useState } from "react";
 import "../styles/carousel.css";
 
@@ -28,9 +27,19 @@ const Carousel = ({ images }) => {
 
   return (
     <div className="carousel">
-      <button className="carousel-btn prev-btn" onClick={prevSlide}>
-        &#10094;
-      </button>
+      {images.length > 1 && (
+        <>
+          <button className="carousel-btn prev-btn" onClick={prevSlide}>
+            &#10094;
+          </button>
+          <button className="carousel-btn next-btn" onClick={nextSlide}>
+            &#10095;
+          </button>
+          <div className="carousel-indicator">
+            {currentIndex + 1}/{images.length}
+          </div>
+        </>
+      )}
       <div
         className="carousel-images"
         style={{ transform: `translateX(${translateValue}%)` }}
@@ -43,12 +52,6 @@ const Carousel = ({ images }) => {
             className="carousel-image"
           />
         ))}
-      </div>
-      <button className="carousel-btn next-btn" onClick={nextSlide}>
-        &#10095;
-      </button>
-      <div className="carousel-indicator">
-        {currentIndex + 1}/{images.length}
       </div>
     </div>
   );

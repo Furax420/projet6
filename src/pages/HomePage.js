@@ -1,8 +1,7 @@
 import React from "react";
-import Banner from "./banner";
-import Footer from "./Footer";
+import Banner from "../components/banner";
 import { render } from "@testing-library/react";
-import CardsList from "./CardsList";
+import CardsList from "../components/CardsList";
 
 function HomePage() {
   return (
@@ -23,7 +22,6 @@ function HomePage() {
           <CardsList />
         </div>
       </main>
-      <Footer />
     </>
   );
 }

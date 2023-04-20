@@ -1,0 +1,33 @@
+.about-collapse {
+  display: grid;
+  grid-template-columns: auto;
+  margin-top: 50px;
+  gap: 20px;
+}
+
+.about .expandable-button-toggle {
+  width: 70%;
+  margin: auto;
+}
+
+.about .expandable-button {
+  width: 70%;
+  margin: auto;
+}
+
+.about .expandable-button-content > p {
+  color: #ff6060;
+}
+.about .expandable-button-content {
+  width: 70%;
+  margin: auto;
+  height: auto;
+  max-height: auto;
+  overflow: hidden;
+  transition: max-height 0.2s ease-in-out;
+}
+.about .expandable-button-content.open {
+  width: 70%;
+  max-height: auto;
+  margin: auto;
+}
