@@ -15,11 +15,13 @@
 }
 
 .title-and-location > h2 {
-  font-size: 36px;
+  font-size: min(max(3vw, 20px), 36px);
   font-weight: 500;
   margin-bottom: 0;
 }
-
+.tags {
+  font-size: min(max(1.9vw, 11px), 16px);
+}
 .host-image {
   width: 64px;
   height: 64px;
@@ -72,7 +74,56 @@
   font-size: 24px;
 }
 
-/* .empty {
-  content: "";
-  height: 25px;
-} */
+@media (max-width: 680px) {
+  .details-container {
+    position: relative;
+    height: auto;
+  }
+  .title-card {
+    flex-direction: column;
+    align-items: self-start;
+    height: 168px;
+    position: relative;
+  }
+  .host-info {
+    align-self: self-end;
+  }
+
+  .host-name {
+    font-size: min(max(3vw, 14px), 18px);
+  }
+
+  .tags-rating {
+    position: relative;
+    display: flex;
+    gap: 30px;
+    flex-direction: column;
+    align-items: flex-start;
+    top: -78px;
+    height: auto;
+  }
+
+  .rating > i {
+    margin-left: 0px !important;
+    margin-right: 8px;
+    font-size: 14px !important;
+  }
+  .fa-solid {
+    width: 13px !important;
+  }
+
+  .host-image {
+    width: min(max(7vw, 32px), 64px);
+    height: min(max(7vw, 32px), 64px);
+  }
+  .title-and-location > h2 {
+    font-size: min(max(3vw, 18px), 28px);
+  }
+  .location {
+    font-size: min(max(3vw, 14px), 18px);
+  }
+  .tag {
+    font-size: min(max(2.1vw, 8px), 14px);
+    margin-right: 5px;
+  }
+}

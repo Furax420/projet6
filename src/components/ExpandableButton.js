@@ -1,25 +1,61 @@
 // ExpandableButton.js
-import React, { useState } from "react";
+import React, { useState, useEffect, useImperativeHandle } from "react";
 import "../styles/expandableButton.css";
 
-const ExpandableButton = ({ buttonText, content, aboutPage }) => {
-  const [isOpen, setIsOpen] = useState(false);
+const ExpandableButton = React.forwardRef(
+  (
+    {
+      className,
+      buttonText,
+      content,
+      aboutPage,
+      onHeightChange = () => {},
+      maxHeight,
+      disableHeightAdjustment,
+    },
+    ref
+  ) => {
+    const [isOpen, setIsOpen] = useState(false);
+    const contentRef = React.useRef();
 
-  const toggleContent = () => {
-    setIsOpen(!isOpen);
-  };
+    useEffect(() => {
+      if (contentRef.current) {
+        onHeightChange(contentRef.current.scrollHeight);
+      }
+    }, [content, onHeightChange]);
 
-  return (
-    <div className={`expandable-button ${aboutPage ? "about" : ""}`}>
-      <button onClick={toggleContent} className="expandable-button-toggle">
-        {buttonText}{" "}
-        <i className={`fa-solid fa-chevron-${isOpen ? "up" : "down"}`}></i>
-      </button>
-      <div className={`expandable-button-content ${isOpen ? "open" : ""}`}>
-        {content}
+    useImperativeHandle(ref, () => ({
+      updateHeight: () => {
+        onHeightChange(contentRef.current.scrollHeight);
+      },
+    }));
+
+    const toggleContent = () => {
+      setIsOpen((prevIsOpen) => !prevIsOpen);
+    };
+
+    const contentStyle = {
+      height: isOpen && !disableHeightAdjustment ? maxHeight : "auto",
+    };
+
+    return (
+      <div
+        className={`expandable-button ${className} ${aboutPage ? "about" : ""}`}
+      >
+        <button onClick={toggleContent} className="expandable-button-toggle">
+          {buttonText}{" "}
+          <i className={`fa-solid fa-chevron-${isOpen ? "up" : "down"}`}></i>
+        </button>
+        <div
+          className={`expandable-button-content ${isOpen ? "open" : ""}`}
+          ref={contentRef}
+          style={contentStyle}
+        >
+          {content}
+        </div>
       </div>
-    </div>
-  );
-};
+    );
+  }
+);
 
 export default ExpandableButton;

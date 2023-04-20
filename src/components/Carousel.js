@@ -26,7 +26,7 @@ const Carousel = ({ images }) => {
   };
 
   return (
-    <div className="carousel">
+    <section className="carousel">
       {images.length > 1 && (
         <>
           <button className="carousel-btn prev-btn" onClick={prevSlide}>
@@ -53,7 +53,7 @@ const Carousel = ({ images }) => {
           />
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -4,7 +4,7 @@ import Card from "./Card";
 import data from "./data.json";
 function CardsList() {
   return (
-    <div className="cards-list">
+    <section className="cards-list">
       {data.map((item) => (
         <Card
           key={item.id}
@@ -13,7 +13,7 @@ function CardsList() {
           cover={item.cover}
         />
       ))}
-    </div>
+    </section>
   );
 }
 

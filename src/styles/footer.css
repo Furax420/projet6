@@ -21,3 +21,13 @@
 .footer {
   margin-top: 25px;
 }
+
+@media (max-width: 680px) {
+  .footer {
+    margin-top: 0;
+  }
+  .footer-background {
+    padding-bottom: 35px;
+    padding-top: 35px;
+  }
+}

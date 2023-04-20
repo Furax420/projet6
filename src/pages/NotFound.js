@@ -1,13 +1,9 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import Banner from "../components/banner";
 
 const NotFound = () => {
   return (
     <>
-      <header>
-        <Banner />
-      </header>
       <div className="block-404">
         <h1 className="h1-404">404</h1>
         <p className="text-404">

@@ -38,8 +38,16 @@
   right: 0;
   padding: 10px;
   color: #ffffff;
-  font-size: 18px;
+  background: linear-gradient(
+    178deg,
+    rgba(255, 96, 96, 0.9) 0%,
+    rgba(95, 59, 59, 0.9) 80%
+  );
+  font-size: clamp(10px, 1.2vw, 18px);
   border-radius: 0 0 10px 10px;
+  height: 15%;
+  max-height: 40px;
+  margin: 0;
 }
 
 /* cards-list.css */
@@ -55,4 +63,57 @@
   background-color: #f7f7f7;
   border-radius: 25px;
   width: 78.6%;
+}
+
+@media only screen and (min-width: 681px) and (max-width: 1200px) {
+  .cards-list {
+    grid-gap: 30px;
+  }
+}
+
+@media (max-width: 680px) {
+  .cards-list {
+    display: flex;
+    flex-direction: column;
+    grid-template-columns: none; /* Réinitialise la propriété grid-template-columns */
+    gap: 20px; /* Ajustez l'espacement entre les cartes si nécessaire */
+    padding: 0;
+    width: 86.12%;
+    background: none;
+    margin-left: 5.94%;
+    margin-right: 5.94%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .card-content {
+    height: 255px;
+  }
+
+  .card {
+    max-height: 255px;
+    margin-bottom: 0;
+  }
+
+  .card-image {
+    max-height: 255px;
+  }
+
+  .card-image > img {
+    max-height: 255px;
+  }
+
+  .card-image-wrapper {
+    position: relative;
+    width: auto;
+    height: 100%;
+    padding-bottom: 0; /* Pourcentage pour rendre la hauteur égale à la largeur */
+    overflow: auto;
+  }
+
+  .card-title {
+    font-size: clamp(12px, 3vw, 18px);
+    height: 15%;
+    max-height: 50px;
+  }
 }
