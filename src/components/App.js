@@ -14,10 +14,10 @@ import "../styles/banner.css";
 
 function App() {
   return (
-    <div className="app-container">
-      <div className="main-content">
-        <Router>
-          <Banner />
+    <Router>
+      <div className="app-container">
+        <Banner />
+        <div className="content-wrapper">
           <main className="App">
             <Routes>
               <Route path="/" element={<HomePage />} />
@@ -27,10 +27,10 @@ function App() {
               <Route path="*" element={<NotFound />} />
             </Routes>
           </main>
-        </Router>
-        <Footer />
+          <Footer />
+        </div>
       </div>
-    </div>
+    </Router>
   );
 }
 

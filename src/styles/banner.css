@@ -2,7 +2,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 40px 6.94%;
+  margin: 0px 6.94%;
+  height: 15vh;
 }
 .image {
   height: 62px;
@@ -62,8 +63,7 @@
 
 @media (max-width: 680px) {
   .banner {
-    margin-bottom: 30px;
-    margin-top: 30px;
+    height: 10svh;
   }
   .front-image {
     height: 111px;
