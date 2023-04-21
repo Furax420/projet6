@@ -49,8 +49,6 @@
   max-height: 40px;
   margin: 0;
 }
-
-/* cards-list.css */
 .cards-list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);

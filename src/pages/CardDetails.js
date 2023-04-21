@@ -8,15 +8,20 @@ import "../styles/card-details.css";
 import NotFound from "../pages/NotFound";
 
 const CardDetails = () => {
+  // Récupérer l'identifiant de la carte à partir de l'URL
   const { id } = useParams();
+  // Trouver la carte correspondante dans les données
   const card = data.find((item) => item.id === id);
 
+  // Définir l'état pour la hauteur maximale et les références pour les sections de contenu
   const [maxHeight, setMaxHeight] = useState(0);
   const descriptionRef = useRef();
   const equipmentRef = useRef();
   const [disableHeightAdjustment, setDisableHeightAdjustment] = useState(
     window.innerWidth < 680
   );
+
+  // Mettre à jour la hauteur maximale en fonction de la nouvelle hauteur
   const updateMaxHeight = useCallback(
     (newHeight) => {
       if (!disableHeightAdjustment) {
@@ -28,6 +33,7 @@ const CardDetails = () => {
     [disableHeightAdjustment]
   );
 
+  // Gérer l'ajustement de la hauteur en fonction de la taille de l'écran
   useEffect(() => {
     const updateDisableHeightAdjustment = () => {
       setDisableHeightAdjustment(window.innerWidth < 680);
@@ -38,6 +44,8 @@ const CardDetails = () => {
       window.removeEventListener("resize", updateDisableHeightAdjustment);
     };
   }, []);
+
+  // Afficher la page "Not Found" si aucune carte n'est trouvée
   if (!card) {
     return <NotFound />;
   }
@@ -70,6 +78,7 @@ const CardDetails = () => {
               ))}
             </div>
             <div className="rating">
+              {/* Dans ce code, deux boucles map sont utilisées pour générer des étoiles pleines (rouges) et vides (grises) en fonction de la note card.rating. La première boucle affiche des étoiles pleines pour chaque point de la note, tandis que la seconde boucle affiche des étoiles vides pour combler la différence entre la note et 5 (le nombre total d'étoiles). */}
               {[...Array(parseInt(card.rating))].map((_, index) => (
                 <i
                   key={index}
@@ -102,8 +111,10 @@ const CardDetails = () => {
               className="description"
               buttonText="Description"
               content={<p>{card.description}</p>}
+              // updateMaxHeight est appelé lorsqu'un boutton est étendu pour ajuster la hauteur maximale des deux bouttons.
               onHeightChange={updateMaxHeight}
               maxHeight={maxHeight}
+              //  indique si l'ajustement de la hauteur doit être désactivé en fonction de la largeur de la fenêtre
               disableHeightAdjustment={disableHeightAdjustment}
             />
             <ExpandableButton
@@ -111,13 +122,12 @@ const CardDetails = () => {
               className="equipement"
               buttonText="Équipements"
               content={
-                <p>
-                  <ul className="equipment-list">
-                    {card.equipments.map((equipment, index) => (
-                      <li key={index}>{equipment}</li>
-                    ))}
-                  </ul>
-                </p>
+                <ul className="equipment-list">
+                  {/*  liste non ordonnée des équipements mappés à partir de card.equipments. */}
+                  {card.equipments.map((equipment, index) => (
+                    <li key={index}>{equipment}</li>
+                  ))}
+                </ul>
               }
               onHeightChange={updateMaxHeight}
               maxHeight={maxHeight}

@@ -24,72 +24,16 @@
   color: #ff6060;
 }
 
-.front-image,
-.front-about-image {
-  display: flex;
-  justify-content: center;
-  width: 86.12%;
-  border-radius: 25px;
-  height: 223px;
-  object-fit: cover;
-  margin: auto;
-  -webkit-filter: brightness(70%); /* Chrome, Safari, Opera */
-  filter: brightness(70%);
-}
-
-.image-container {
-  position: relative;
-}
-
-.text-container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 2;
-  width: 86.12%;
-  margin: auto;
-  text-align: center;
-  padding: 10px;
-  word-wrap: break-word;
-  color: white;
-  font-weight: 500;
-  font-size: clamp(
-    8px,
-    5vw,
-    48px
-  ); /* Permet de casser les mots si nécessaire */ /* Ajoutez un peu d'espace autour du texte */
-}
-
 @media (max-width: 680px) {
   .banner {
     height: 10svh;
   }
-  .front-image {
-    height: 111px;
-  }
 
-  .image-container {
-    height: 111px;
-  }
-  .text-container {
-    font-size: 24px;
-    width: 220.5px;
-    text-align: left;
-  }
   .image {
     max-height: 37px;
   }
   .navigation {
     gap: 20px;
     font-size: 12px;
-  }
-
-  .about-image {
-    height: 223px;
-  }
-
-  .front-about-image {
-    height: 223px;
   }
 }

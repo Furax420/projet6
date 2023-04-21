@@ -1,18 +1,19 @@
 import React from "react";
 import { render } from "@testing-library/react";
 import ExpandableButton from "../components/ExpandableButton";
+import FrontImage from "../components/FrontImage";
 import "../styles/about-collapse.css";
+import "../styles/front-image.css";
 
 function AboutPage() {
   return (
     <>
-      <section className="image-container about-image">
-        <img
-          src="/mountains.png"
-          alt="montagnes"
-          className="front-about-image"
-        />
-      </section>
+      <FrontImage
+        src="/mountains.png"
+        alt="montagnes"
+        text=""
+        isAboutPage={true}
+      />
       <section className="about-collapse">
         <ExpandableButton
           className="collapse"

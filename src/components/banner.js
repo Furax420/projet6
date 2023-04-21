@@ -6,7 +6,9 @@ const Banner = () => {
   return (
     <header className="banner">
       <div className="logo">
-        <img src="/Kasa.logo.png" alt="Kasalogo" className="image" />
+        <NavLink to="/">
+          <img src="/Kasa.logo.png" alt="Kasalogo" className="image" />
+        </NavLink>
       </div>
       <div className="navigation">
         <NavLink

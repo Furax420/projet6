@@ -1,12 +1,15 @@
 import React from "react";
 
-function FrontImage() {
+function FrontImage({ src, alt, text, isAboutPage }) {
   return (
-    <img
-      src="/sea-mountains.png"
-      alt="image-mer-montagnes"
-      className="front-image"
-    />
+    <section className={`image-container${isAboutPage ? " about-image" : ""}`}>
+      <img
+        src={src}
+        alt={alt}
+        className={`front-image${isAboutPage ? " front-about-image" : ""}`}
+      />
+      <div className="text-container">{text}</div>
+    </section>
   );
 }
 

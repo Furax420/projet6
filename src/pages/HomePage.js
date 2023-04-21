@@ -1,18 +1,17 @@
 import React from "react";
 import { render } from "@testing-library/react";
 import CardsList from "../components/CardsList";
+import FrontImage from "../components/FrontImage";
+import "../styles/front-image.css";
 
 function HomePage() {
   return (
     <>
-      <section className="image-container">
-        <img
-          src="/sea-mountains.png"
-          alt="mer-montagnes"
-          className="front-image"
-        />
-        <div className="text-container">{"Chez vous, partout et ailleurs"}</div>
-      </section>
+      <FrontImage
+        src="/sea-mountains.png"
+        alt="mer-montagnes"
+        text="Chez vous, partout et ailleurs"
+      />
       <CardsList />
     </>
   );
