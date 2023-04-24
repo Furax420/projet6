@@ -1,8 +1,8 @@
-// ExpandableButton.js
+// Collapse.js
 import React, { useState, useEffect, useImperativeHandle } from "react";
-import "../styles/expandableButton.css";
-
-const ExpandableButton = React.forwardRef(
+import "../styles/collapse.css";
+import "../styles/about-collapse.css";
+const Collapse = React.forwardRef(
   (
     {
       className,
@@ -58,4 +58,4 @@ const ExpandableButton = React.forwardRef(
   }
 );
 
-export default ExpandableButton;
+export default Collapse;

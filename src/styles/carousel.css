@@ -1,4 +1,3 @@
-/* carousel.css */
 .carousel {
   position: relative;
   display: flex;
@@ -27,6 +26,7 @@
 }
 
 .carousel-image {
+  flex-shrink: 0;
   width: 100%;
   object-fit: cover;
 }

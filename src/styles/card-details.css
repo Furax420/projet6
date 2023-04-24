@@ -74,6 +74,19 @@
   font-size: 24px;
 }
 
+.red-star {
+  color: #ff6060;
+  font-size: 24px;
+  width: 24.75px;
+  margin-left: 15px;
+}
+.grey-star {
+  color: #e3e3e3;
+  font-size: 24px;
+  width: 24.75px;
+  margin-left: 15px;
+}
+
 @media (max-width: 680px) {
   .details-container {
     position: relative;
@@ -125,5 +138,10 @@
   .tag {
     font-size: min(max(2.1vw, 8px), 14px);
     margin-right: 5px;
+  }
+}
+@media (max-width: 320px) {
+  .tag {
+    font-size: 7px;
   }
 }

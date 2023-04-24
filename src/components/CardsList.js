@@ -1,7 +1,7 @@
 // CardsList.js
 import React from "react";
 import Card from "./Card";
-import data from "./data.json";
+import data from "../data/data.json";
 function CardsList() {
   return (
     <section className="cards-list">

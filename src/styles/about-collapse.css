@@ -38,10 +38,10 @@
     margin-bottom: 29px;
   }
 
-  .about .expandable-button-toggle,
-  .about .expandable-button,
-  .about .expandable-button-content,
-  .about .expandable-button-content.open {
+  .about .expandable-button-toggle .collapse,
+  .about .expandable-button .collapse,
+  .about .expandable-button-content .collapse,
+  .about .expandable-button-content.open .collapse {
     width: 86.12%;
   }
 }

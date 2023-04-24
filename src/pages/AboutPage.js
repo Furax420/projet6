@@ -1,9 +1,9 @@
 import React from "react";
-import { render } from "@testing-library/react";
-import ExpandableButton from "../components/ExpandableButton";
+import Collapse from "../components/Collapse";
 import FrontImage from "../components/FrontImage";
-import "../styles/about-collapse.css";
 import "../styles/front-image.css";
+import Data from "../data/about-data.json";
+import "../styles/about-collapse.css";
 
 function AboutPage() {
   return (
@@ -15,57 +15,15 @@ function AboutPage() {
         isAboutPage={true}
       />
       <section className="about-collapse">
-        <ExpandableButton
-          className="collapse"
-          buttonText="Fiabilité"
-          content={
-            <p>
-              Les annonces postées sur Kasa garantissent une fiabilité totale.
-              Les photos sont conformes aux logements, et toutes les
-              informations sont régulièrement vérifiées par nos équipes.
-            </p>
-          }
-          aboutPage={true}
-        />
-        <ExpandableButton
-          className="collapse"
-          buttonText="Respect"
-          content={
-            <p>
-              La bienveillance fait partie des valeurs fondatrices de Kasa. Tout
-              comportement discriminatoire ou de perturbation du voisinage
-              entraînera une exclusion de notre plateforme.
-            </p>
-          }
-          aboutPage={true}
-        />
-        <ExpandableButton
-          className="collapse"
-          buttonText="Service"
-          content={
-            <p>
-              Nos équipes se tiennent à votre disposition pour vous fournir une
-              expérience parfaite. N'hésitez pas à nous contacter si vous avez
-              la moindre question.
-            </p>
-          }
-          aboutPage={true}
-        />
-        <ExpandableButton
-          className="collapse"
-          buttonText="Sécurité"
-          content={
-            <p>
-              La sécurité est la priorité de Kasa. Aussi bien pour nos hôtes que
-              pour les voyageurs, chaque logement correspond aux critères de
-              sécurité établis par nos services. En laissant une note aussi bien
-              à l'hôte qu'au locataire, cela permet à nos équipes de vérifier
-              que les standards sont bien respectés. Nous organisons également
-              des ateliers sur la sécurité domestique pour nos hôtes.
-            </p>
-          }
-          aboutPage={true}
-        />
+        {Data.map((item) => (
+          <Collapse
+            key={item.id}
+            className="collapse"
+            buttonText={item.title}
+            content={<p>{item.description}</p>}
+            aboutPage={true}
+          />
+        ))}
       </section>
     </>
   );

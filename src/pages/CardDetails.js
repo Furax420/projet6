@@ -1,9 +1,9 @@
 // CardDetails.js
 import React, { useRef, useState, useCallback, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import data from "../components/data.json";
+import data from "../data/data.json";
 import Carousel from "../components/Carousel";
-import ExpandableButton from "../components/ExpandableButton";
+import Collapse from "../components/Collapse";
 import "../styles/card-details.css";
 import NotFound from "../pages/NotFound";
 
@@ -80,33 +80,15 @@ const CardDetails = () => {
             <div className="rating">
               {/* Dans ce code, deux boucles map sont utilisées pour générer des étoiles pleines (rouges) et vides (grises) en fonction de la note card.rating. La première boucle affiche des étoiles pleines pour chaque point de la note, tandis que la seconde boucle affiche des étoiles vides pour combler la différence entre la note et 5 (le nombre total d'étoiles). */}
               {[...Array(parseInt(card.rating))].map((_, index) => (
-                <i
-                  key={index}
-                  className="fa-solid fa-star"
-                  style={{
-                    color: "#ff6060",
-                    fontSize: "24px",
-                    width: "24.75px",
-                    marginLeft: "15px",
-                  }}
-                ></i>
+                <i key={index} className="fa-solid fa-star red-star"></i>
               ))}
               {[...Array(5 - parseInt(card.rating))].map((_, index) => (
-                <i
-                  key={index}
-                  className="fa-solid fa-star"
-                  style={{
-                    color: "#E3E3E3",
-                    fontSize: "24px",
-                    width: "24.75px",
-                    marginLeft: "15px",
-                  }}
-                ></i>
+                <i key={index} className="fa-solid fa-star grey-star"></i>
               ))}
             </div>
           </div>
           <div className="description-equipement">
-            <ExpandableButton
+            <Collapse
               ref={descriptionRef}
               className="description"
               buttonText="Description"
@@ -117,7 +99,7 @@ const CardDetails = () => {
               //  indique si l'ajustement de la hauteur doit être désactivé en fonction de la largeur de la fenêtre
               disableHeightAdjustment={disableHeightAdjustment}
             />
-            <ExpandableButton
+            <Collapse
               ref={equipmentRef}
               className="equipement"
               buttonText="Équipements"
