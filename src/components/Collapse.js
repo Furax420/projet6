@@ -1,7 +1,8 @@
-// Collapse.js
-import React, { useState, useEffect, useImperativeHandle } from "react";
+import React from "react";
 import "../styles/collapse.css";
 import "../styles/about-collapse.css";
+import { useCollapse } from "../functions/CollapseFunction";
+
 const Collapse = React.forwardRef(
   (
     {
@@ -15,24 +16,11 @@ const Collapse = React.forwardRef(
     },
     ref
   ) => {
-    const [isOpen, setIsOpen] = useState(false);
-    const contentRef = React.useRef();
-
-    useEffect(() => {
-      if (contentRef.current) {
-        onHeightChange(contentRef.current.scrollHeight);
-      }
-    }, [content, onHeightChange]);
-
-    useImperativeHandle(ref, () => ({
-      updateHeight: () => {
-        onHeightChange(contentRef.current.scrollHeight);
-      },
-    }));
-
-    const toggleContent = () => {
-      setIsOpen((prevIsOpen) => !prevIsOpen);
-    };
+    const { isOpen, contentRef, toggleContent } = useCollapse(
+      ref,
+      content,
+      onHeightChange
+    );
 
     const contentStyle = {
       height: isOpen && !disableHeightAdjustment ? maxHeight : "auto",

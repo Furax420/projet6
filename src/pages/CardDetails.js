@@ -1,11 +1,12 @@
 // CardDetails.js
-import React, { useRef, useState, useCallback, useEffect } from "react";
+import React, { useRef } from "react";
 import { useParams } from "react-router-dom";
 import data from "../data/data.json";
 import Carousel from "../components/Carousel";
 import Collapse from "../components/Collapse";
 import "../styles/card-details.css";
 import NotFound from "../pages/NotFound";
+import { useCollapsesCards } from "../functions/CollapsesCardsFunction";
 
 const CardDetails = () => {
   // Récupérer l'identifiant de la carte à partir de l'URL
@@ -13,37 +14,13 @@ const CardDetails = () => {
   // Trouver la carte correspondante dans les données
   const card = data.find((item) => item.id === id);
 
-  // Définir l'état pour la hauteur maximale et les références pour les sections de contenu
-  const [maxHeight, setMaxHeight] = useState(0);
+  // Utiliser les fonctions définies dans CollapsesCardsFunction.js
+  const { maxHeight, disableHeightAdjustment, updateMaxHeight } =
+    useCollapsesCards();
+
+  // Définir les références pour les sections de contenu
   const descriptionRef = useRef();
   const equipmentRef = useRef();
-  const [disableHeightAdjustment, setDisableHeightAdjustment] = useState(
-    window.innerWidth < 680
-  );
-
-  // Mettre à jour la hauteur maximale en fonction de la nouvelle hauteur
-  const updateMaxHeight = useCallback(
-    (newHeight) => {
-      if (!disableHeightAdjustment) {
-        setMaxHeight((prevHeight) => Math.max(prevHeight, newHeight));
-      } else {
-        setMaxHeight("auto");
-      }
-    },
-    [disableHeightAdjustment]
-  );
-
-  // Gérer l'ajustement de la hauteur en fonction de la taille de l'écran
-  useEffect(() => {
-    const updateDisableHeightAdjustment = () => {
-      setDisableHeightAdjustment(window.innerWidth < 680);
-    };
-
-    window.addEventListener("resize", updateDisableHeightAdjustment);
-    return () => {
-      window.removeEventListener("resize", updateDisableHeightAdjustment);
-    };
-  }, []);
 
   // Afficher la page "Not Found" si aucune carte n'est trouvée
   if (!card) {
