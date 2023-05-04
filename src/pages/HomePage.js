@@ -1,5 +1,4 @@
 import React from "react";
-import { render } from "@testing-library/react";
 import CardsList from "../components/CardsList";
 import FrontImage from "../components/FrontImage";
 import "../styles/front-image.css";

@@ -29,7 +29,7 @@ const Carousel = ({ images }) => {
           <img
             key={index}
             src={image}
-            alt={`carousel-image-${index}`}
+            alt={`carousel-${index}`}
             className="carousel-image"
           />
         ))}
